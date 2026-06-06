@@ -34,6 +34,7 @@ const BST_OFFSET = 6; // UTC+6
 /**
  * Convert a local match time to Bangladesh Standard Time (BST = UTC+6).
  * Returns an object with the BST time string and whether it crosses midnight.
+ * NOTE: fixture times are now stored as BDT directly, so this is kept for reference only.
  */
 export function toBST(localTime: string, city: string): { time: string; nextDay: boolean } {
   const cityOffset = CITY_UTC_OFFSET[city] ?? -5; // default CDT if unknown
@@ -55,9 +56,9 @@ export function toBST(localTime: string, city: string): { time: string; nextDay:
 }
 
 /**
- * Format a BST time for display, optionally showing (+1) if it crosses midnight.
+ * Format a match time for display in BST.
+ * Fixture times are stored directly in BDT (BST), so this just appends the label.
  */
-export function formatBSTTime(localTime: string, city: string): string {
-  const { time, nextDay } = toBST(localTime, city);
-  return nextDay ? `${time} BST (+1)` : `${time} BST`;
+export function formatBSTTime(bstTime: string, _city: string): string {
+  return `${bstTime} BST`;
 }
