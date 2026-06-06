@@ -7,10 +7,10 @@ import { ChevronUp, ChevronDown } from 'lucide-react'
 import { motion, AnimatePresence } from 'framer-motion'
 
 const RANK_CONFIG = [
-  { label: '1st', bar: 'bg-emerald-500',     badge: 'bg-emerald-500/20 text-emerald-400', border: 'border-l-emerald-500 bg-emerald-500/5' },
-  { label: '2nd', bar: 'bg-emerald-500',     badge: 'bg-emerald-500/20 text-emerald-400', border: 'border-l-emerald-500 bg-emerald-500/5' },
-  { label: '3rd', bar: 'bg-amber-400',       badge: 'bg-amber-500/20 text-amber-400',     border: 'border-l-amber-400 bg-amber-500/5'   },
-  { label: '4th', bar: 'bg-muted-foreground/30', badge: 'bg-muted/60 text-muted-foreground', border: 'border-l-border bg-card/30'        },
+  { label: '1st', badge: 'bg-emerald-500/20 text-emerald-400', border: 'border-l-emerald-500 bg-emerald-500/5' },
+  { label: '2nd', badge: 'bg-emerald-500/20 text-emerald-400', border: 'border-l-emerald-500 bg-emerald-500/5' },
+  { label: '3rd', badge: 'bg-amber-500/20 text-amber-400',     border: 'border-l-amber-400 bg-amber-500/5'   },
+  { label: '4th', badge: 'bg-muted/60 text-muted-foreground',  border: 'border-l-border bg-card/30'          },
 ]
 
 function TeamRow({
@@ -40,9 +40,7 @@ function TeamRow({
         className={`flex items-center gap-2.5 p-3 mb-2 rounded-xl border border-border/40 border-l-4 transition-colors duration-200 ${rank.border}`}
       >
         {/* Rank badge */}
-        <div
-          className={`w-8 h-7 rounded-lg flex items-center justify-center text-[10px] font-black shrink-0 ${rank.badge}`}
-        >
+        <div className={`w-8 h-7 rounded-lg flex items-center justify-center text-[10px] font-black shrink-0 ${rank.badge}`}>
           {rank.label}
         </div>
 
@@ -87,67 +85,85 @@ export function GroupStage() {
   if (!availableGroups.length)
     return <div className="text-center py-20 text-muted-foreground">Loading groups…</div>
 
-  const moveTeam = (
-    groupId: string,
-    teams: any[],
-    index: number,
-    direction: 'up' | 'down'
-  ) => {
+  const moveTeam = (groupId: string, teams: any[], index: number, direction: 'up' | 'down') => {
     const neighborIndex = direction === 'up' ? index - 1 : index + 1
     if (neighborIndex < 0 || neighborIndex >= teams.length) return
-    // reorderGroup swaps activeId with overId's position
     reorderGroup(groupId, teams[index].id, teams[neighborIndex].id)
   }
 
   return (
-    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
-      {availableGroups.map((group) => {
-        const teams = groupRankings[group.id] || []
+    <div>
+      {/* ── Instruction banner ── */}
+      <div className="mb-6 rounded-2xl border border-emerald-500/20 bg-emerald-500/5 px-4 py-4 flex items-start gap-3">
+        <div className="h-10 w-10 rounded-xl bg-emerald-500/15 border border-emerald-500/25 flex items-center justify-center text-xl shrink-0 mt-0.5">
+          🏆
+        </div>
+        <div>
+          <p className="text-sm font-bold text-foreground mb-1">Rank teams in each group</p>
+          <p className="text-xs text-muted-foreground leading-relaxed">
+            Use the{' '}
+            <span className="inline-flex items-center gap-0.5 mx-0.5 px-1.5 py-0.5 bg-muted rounded-md text-foreground font-bold text-[10px]">
+              ↑ ↓
+            </span>{' '}
+            buttons to set your predicted finishing order.
+            The top <strong className="text-emerald-400">2 teams</strong> from each group qualify
+            for the knockout stage. The{' '}
+            <strong className="text-amber-400">3rd-place</strong> team may advance as a wildcard
+            in the next step.
+          </p>
+        </div>
+      </div>
 
-        return (
-          <Card
-            key={group.id}
-            className="overflow-hidden border border-border/40 bg-card/30 backdrop-blur-md shadow-lg hover:shadow-emerald-500/5 hover:border-emerald-500/20 transition-all duration-300 rounded-2xl"
-          >
-            <CardHeader className="bg-gradient-to-r from-muted/30 to-muted/10 border-b border-border/30 pb-3">
-              <CardTitle className="text-center font-black text-sm tracking-widest text-emerald-400 uppercase">
-                Group {group.name}
-              </CardTitle>
-            </CardHeader>
+      {/* ── Groups grid ── */}
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+        {availableGroups.map((group) => {
+          const teams = groupRankings[group.id] || []
 
-            <CardContent className="p-4 bg-transparent">
-              <AnimatePresence initial={false}>
-                {teams.map((team, index) => (
-                  <TeamRow
-                    key={team.id}
-                    team={team}
-                    index={index}
-                    totalTeams={teams.length}
-                    onMoveUp={() => moveTeam(group.id, teams, index, 'up')}
-                    onMoveDown={() => moveTeam(group.id, teams, index, 'down')}
-                  />
-                ))}
-              </AnimatePresence>
+          return (
+            <Card
+              key={group.id}
+              className="overflow-hidden border border-border/40 bg-card/30 backdrop-blur-md shadow-lg hover:shadow-emerald-500/5 hover:border-emerald-500/20 transition-all duration-300 rounded-2xl"
+            >
+              <CardHeader className="bg-gradient-to-r from-muted/30 to-muted/10 border-b border-border/30 pb-3">
+                <CardTitle className="text-center font-black text-sm tracking-widest text-emerald-400 uppercase">
+                  Group {group.name}
+                </CardTitle>
+              </CardHeader>
 
-              {/* Legend */}
-              <div className="mt-3 pt-2 border-t border-border/30 flex gap-3 flex-wrap text-[9px] font-bold text-muted-foreground uppercase tracking-wider">
-                <span className="flex items-center gap-1">
-                  <span className="w-2 h-2 rounded-full bg-emerald-500 inline-block" />
-                  Top 2 Qualify
-                </span>
-                <span className="flex items-center gap-1">
-                  <span className="w-2 h-2 rounded-full bg-amber-400 inline-block" />
-                  Wildcard
-                </span>
-                <span className="flex items-center gap-1">
-                  <span className="w-2 h-2 rounded-full bg-muted-foreground/40 inline-block" />
-                  Out
-                </span>
-              </div>
-            </CardContent>
-          </Card>
-        )
-      })}
+              <CardContent className="p-4 bg-transparent">
+                <AnimatePresence initial={false}>
+                  {teams.map((team, index) => (
+                    <TeamRow
+                      key={team.id}
+                      team={team}
+                      index={index}
+                      totalTeams={teams.length}
+                      onMoveUp={() => moveTeam(group.id, teams, index, 'up')}
+                      onMoveDown={() => moveTeam(group.id, teams, index, 'down')}
+                    />
+                  ))}
+                </AnimatePresence>
+
+                {/* Legend */}
+                <div className="mt-3 pt-2 border-t border-border/30 flex gap-3 flex-wrap text-[9px] font-bold text-muted-foreground uppercase tracking-wider">
+                  <span className="flex items-center gap-1">
+                    <span className="w-2 h-2 rounded-full bg-emerald-500 inline-block" />
+                    Top 2 Qualify
+                  </span>
+                  <span className="flex items-center gap-1">
+                    <span className="w-2 h-2 rounded-full bg-amber-400 inline-block" />
+                    Wildcard
+                  </span>
+                  <span className="flex items-center gap-1">
+                    <span className="w-2 h-2 rounded-full bg-muted-foreground/40 inline-block" />
+                    Out
+                  </span>
+                </div>
+              </CardContent>
+            </Card>
+          )
+        })}
+      </div>
     </div>
   )
 }
