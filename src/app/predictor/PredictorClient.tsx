@@ -52,6 +52,11 @@ export function PredictorClient({ initialGroups }: { initialGroups: Group[] }) {
     }
   }, [initialGroups, setAvailableGroups])
 
+  // Scroll to top whenever the step changes (after React re-renders)
+  useEffect(() => {
+    window.scrollTo({ top: 0, behavior: 'instant' as ScrollBehavior })
+  }, [step])
+
   const canProceed = () => {
     if (step === 1) return true
     if (step === 2) return selectedThirdPlaceTeams.length === 8
@@ -63,7 +68,6 @@ export function PredictorClient({ initialGroups }: { initialGroups: Group[] }) {
       initBracket()
     }
     setStep(s => Math.min(3, s + 1))
-    window.scrollTo({ top: 0, behavior: 'smooth' })
   }
 
   const steps = [
@@ -137,7 +141,7 @@ export function PredictorClient({ initialGroups }: { initialGroups: Group[] }) {
       <div className="mt-12 flex justify-between items-center border-t border-border/40 pt-6 pb-20">
         <Button 
           variant="outline" 
-          onClick={() => { setStep(s => Math.max(1, s - 1)); window.scrollTo({ top: 0, behavior: 'smooth' }) }}
+          onClick={() => setStep(s => Math.max(1, s - 1))}
           disabled={step === 1}
           className="h-11 px-5 rounded-xl border-border hover:border-emerald-500/30 hover:bg-muted/50 cursor-pointer transition-all"
         >
