@@ -1,9 +1,10 @@
 'use client'
 
 import Link from 'next/link'
-import { Trophy, Calendar, Users, Home, MapPin, Settings, LogIn } from 'lucide-react'
+import { Trophy, Calendar, Users, Home, MapPin, LogIn } from 'lucide-react'
 import { usePathname } from 'next/navigation'
 import { cn } from '@/lib/utils'
+import { PWAInstallButton } from '@/components/pwa-install-button'
 
 export function Navbar() {
   const pathname = usePathname()
@@ -47,13 +48,14 @@ export function Navbar() {
             </nav>
           </div>
           
-          {/* Mobile Nav */}
+          {/* Mobile: title + install + login */}
           <div className="flex flex-1 items-center justify-between space-x-2 md:justify-end">
             <div className="md:hidden flex items-center">
               <Trophy className="h-6 w-6 text-primary mr-2" />
               <span className="font-bold">FIFA 2026</span>
             </div>
-            <nav className="flex items-center">
+            <nav className="flex items-center gap-2">
+              <PWAInstallButton />
               <Link href="/login" className="flex items-center gap-2 text-sm font-medium transition-colors hover:text-foreground/80 text-foreground/60">
                 <LogIn className="h-4 w-4" />
                 <span className="hidden sm:inline-block">Login</span>

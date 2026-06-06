@@ -9,7 +9,20 @@ const inter = Inter({ subsets: ["latin"] });
 export const metadata: Metadata = {
   title: "FIFA World Cup 2026 Predictor",
   description: "Predict the outcomes of the 2026 FIFA World Cup matches.",
-};
+  manifest: "/manifest.json",
+  appleWebApp: {
+    capable: true,
+    statusBarStyle: "black-translucent",
+    title: "FIFA 2026",
+  },
+  other: {
+    "mobile-web-app-capable": "yes",
+  },
+}
+
+export const viewport = {
+  themeColor: "#10b981",
+}
 
 export default function RootLayout({
   children,
