@@ -201,6 +201,22 @@ export function KnockoutStage() {
   return (
     <div className="flex flex-col w-full h-full">
 
+      {/* ── Instruction banner ── */}
+      <div className="mb-6 rounded-2xl border border-amber-500/20 bg-amber-500/5 px-4 py-4 flex items-start gap-3">
+        <div className="h-10 w-10 rounded-xl bg-amber-500/15 border border-amber-500/25 flex items-center justify-center text-xl shrink-0 mt-0.5">
+          ⚡
+        </div>
+        <div>
+          <p className="text-sm font-bold text-foreground mb-1">Pick the winner of each match</p>
+          <p className="text-xs text-muted-foreground leading-relaxed">
+            <strong className="text-foreground">Tap a team</strong> to select them as the match winner — they advance automatically to the next round.
+            Work through the{' '}
+            <span className="text-amber-400 font-bold">Round of 32 → 16 → Quarter Finals → Semi Finals → Final</span>{' '}
+            to crown your World Cup champion! 🏆
+          </p>
+        </div>
+      </div>
+
       {champion && (
         <Podium
           champion={champion}
