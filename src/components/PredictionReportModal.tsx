@@ -184,7 +184,7 @@ export function PredictionReportModal({
         await navigator.share({
           files: [file],
           title: 'My FIFA World Cup 2026 Prediction',
-          text: `My money is on ${champion.name} to lift the FIFA World Cup 2026! 🏆 Predict your winner here:`,
+          text: `I predict ${champion.name} will lift the FIFA World Cup 2026! 🏆 Predict your winner here:`,
           url: typeof window !== 'undefined' ? window.location.origin : 'https://fifapredictor2026.com'
         })
       } else {
