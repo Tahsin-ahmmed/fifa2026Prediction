@@ -17,7 +17,7 @@ export const TEAMS_DATA: TeamData[] = [
   { name: 'Czechia',        code: 'CZE', flag: '🇨🇿', group: 'A', confederation: 'UEFA',     ranking: 41 },
   // Group B
   { name: 'Canada',         code: 'CAN', flag: '🇨🇦', group: 'B', confederation: 'CONCACAF', ranking: 30 },
-  { name: 'Wales',          code: 'WAL', flag: '🏴󠁧󠁢󠁷󠁬󠁳󠁿', group: 'B', confederation: 'UEFA',     ranking: 37 },
+  { name: 'Bosnia and Herzegovina', code: 'BIH', flag: '🇧🇦', group: 'B', confederation: 'UEFA',     ranking: 45 },
   { name: 'Qatar',          code: 'QAT', flag: '🇶🇦', group: 'B', confederation: 'AFC',      ranking: 55 },
   { name: 'Switzerland',    code: 'SUI', flag: '🇨🇭', group: 'B', confederation: 'UEFA',     ranking: 19 },
   // Group C
@@ -29,7 +29,7 @@ export const TEAMS_DATA: TeamData[] = [
   { name: 'United States',  code: 'USA', flag: '🇺🇸', group: 'D', confederation: 'CONCACAF', ranking: 16 },
   { name: 'Paraguay',       code: 'PAR', flag: '🇵🇾', group: 'D', confederation: 'CONMEBOL', ranking: 40 },
   { name: 'Australia',      code: 'AUS', flag: '🇦🇺', group: 'D', confederation: 'AFC',      ranking: 27 },
-  { name: 'Romania',        code: 'ROU', flag: '🇷🇴', group: 'D', confederation: 'UEFA',     ranking: 56 },
+  { name: 'Türkiye',         code: 'TUR', flag: '🇹🇷', group: 'D', confederation: 'UEFA',     ranking: 26 },
   // Group E
   { name: 'Germany',        code: 'GER', flag: '🇩🇪', group: 'E', confederation: 'UEFA',     ranking: 10 },
   { name: 'Curaçao',        code: 'CUW', flag: '🇨🇼', group: 'E', confederation: 'CONCACAF', ranking: 82 },
@@ -38,7 +38,7 @@ export const TEAMS_DATA: TeamData[] = [
   // Group F
   { name: 'Netherlands',    code: 'NED', flag: '🇳🇱', group: 'F', confederation: 'UEFA',     ranking: 7 },
   { name: 'Japan',          code: 'JPN', flag: '🇯🇵', group: 'F', confederation: 'AFC',      ranking: 18 },
-  { name: 'Ukraine',        code: 'UKR', flag: '🇺🇦', group: 'F', confederation: 'UEFA',     ranking: 32 },
+  { name: 'Sweden',          code: 'SWE', flag: '🇸🇪', group: 'F', confederation: 'UEFA',     ranking: 20 },
   { name: 'Tunisia',        code: 'TUN', flag: '🇹🇳', group: 'F', confederation: 'CAF',      ranking: 44 },
   // Group G
   { name: 'Belgium',        code: 'BEL', flag: '🇧🇪', group: 'G', confederation: 'UEFA',     ranking: 9 },
@@ -53,7 +53,7 @@ export const TEAMS_DATA: TeamData[] = [
   // Group I
   { name: 'France',         code: 'FRA', flag: '🇫🇷', group: 'I', confederation: 'UEFA',     ranking: 3 },
   { name: 'Senegal',        code: 'SEN', flag: '🇸🇳', group: 'I', confederation: 'CAF',      ranking: 14 },
-  { name: 'Bolivia',        code: 'BOL', flag: '🇧🇴', group: 'I', confederation: 'CONMEBOL', ranking: 76 },
+  { name: 'Iraq',            code: 'IRQ', flag: '🇮🇶', group: 'I', confederation: 'AFC',      ranking: 58 },
   { name: 'Norway',         code: 'NOR', flag: '🇳🇴', group: 'I', confederation: 'UEFA',     ranking: 31 },
   // Group J
   { name: 'Argentina',      code: 'ARG', flag: '🇦🇷', group: 'J', confederation: 'CONMEBOL', ranking: 1 },

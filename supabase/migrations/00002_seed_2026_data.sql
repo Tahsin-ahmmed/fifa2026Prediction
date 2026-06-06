@@ -30,7 +30,7 @@ INSERT INTO teams (id, name, code, flag_url, group_id) VALUES
   
   -- Group B
   (uuid_generate_v5(uuid_ns_url(), 'team-CAN'), 'Canada', 'CAN', '🇨🇦', uuid_generate_v5(uuid_ns_url(), 'group-B')),
-  (uuid_generate_v5(uuid_ns_url(), 'team-WAL'), 'Wales', 'WAL', '🏴󠁧󠁢󠁷󠁬󠁳󠁿', uuid_generate_v5(uuid_ns_url(), 'group-B')),
+  (uuid_generate_v5(uuid_ns_url(), 'team-BIH'), 'Bosnia and Herzegovina', 'BIH', '🇧🇦', uuid_generate_v5(uuid_ns_url(), 'group-B')),
   (uuid_generate_v5(uuid_ns_url(), 'team-QAT'), 'Qatar', 'QAT', '🇶🇦', uuid_generate_v5(uuid_ns_url(), 'group-B')),
   (uuid_generate_v5(uuid_ns_url(), 'team-SUI'), 'Switzerland', 'SUI', '🇨🇭', uuid_generate_v5(uuid_ns_url(), 'group-B')),
 
@@ -44,7 +44,7 @@ INSERT INTO teams (id, name, code, flag_url, group_id) VALUES
   (uuid_generate_v5(uuid_ns_url(), 'team-USA'), 'United States', 'USA', '🇺🇸', uuid_generate_v5(uuid_ns_url(), 'group-D')),
   (uuid_generate_v5(uuid_ns_url(), 'team-PAR'), 'Paraguay', 'PAR', '🇵🇾', uuid_generate_v5(uuid_ns_url(), 'group-D')),
   (uuid_generate_v5(uuid_ns_url(), 'team-AUS'), 'Australia', 'AUS', '🇦🇺', uuid_generate_v5(uuid_ns_url(), 'group-D')),
-  (uuid_generate_v5(uuid_ns_url(), 'team-ROU'), 'Romania', 'ROU', '🇷🇴', uuid_generate_v5(uuid_ns_url(), 'group-D')),
+  (uuid_generate_v5(uuid_ns_url(), 'team-TUR'), 'Türkiye', 'TUR', '🇹🇷', uuid_generate_v5(uuid_ns_url(), 'group-D')),
 
   -- Group E
   (uuid_generate_v5(uuid_ns_url(), 'team-GER'), 'Germany', 'GER', '🇩🇪', uuid_generate_v5(uuid_ns_url(), 'group-E')),
@@ -55,7 +55,7 @@ INSERT INTO teams (id, name, code, flag_url, group_id) VALUES
   -- Group F
   (uuid_generate_v5(uuid_ns_url(), 'team-NED'), 'Netherlands', 'NED', '🇳🇱', uuid_generate_v5(uuid_ns_url(), 'group-F')),
   (uuid_generate_v5(uuid_ns_url(), 'team-JPN'), 'Japan', 'JPN', '🇯🇵', uuid_generate_v5(uuid_ns_url(), 'group-F')),
-  (uuid_generate_v5(uuid_ns_url(), 'team-UKR'), 'Ukraine', 'UKR', '🇺🇦', uuid_generate_v5(uuid_ns_url(), 'group-F')),
+  (uuid_generate_v5(uuid_ns_url(), 'team-SWE'), 'Sweden', 'SWE', '🇸🇪', uuid_generate_v5(uuid_ns_url(), 'group-F')),
   (uuid_generate_v5(uuid_ns_url(), 'team-TUN'), 'Tunisia', 'TUN', '🇹🇳', uuid_generate_v5(uuid_ns_url(), 'group-F')),
 
   -- Group G
@@ -73,7 +73,7 @@ INSERT INTO teams (id, name, code, flag_url, group_id) VALUES
   -- Group I
   (uuid_generate_v5(uuid_ns_url(), 'team-FRA'), 'France', 'FRA', '🇫🇷', uuid_generate_v5(uuid_ns_url(), 'group-I')),
   (uuid_generate_v5(uuid_ns_url(), 'team-SEN'), 'Senegal', 'SEN', '🇸🇳', uuid_generate_v5(uuid_ns_url(), 'group-I')),
-  (uuid_generate_v5(uuid_ns_url(), 'team-BOL'), 'Bolivia', 'BOL', '🇧🇴', uuid_generate_v5(uuid_ns_url(), 'group-I')),
+  (uuid_generate_v5(uuid_ns_url(), 'team-IRQ'), 'Iraq', 'IRQ', '🇮🇶', uuid_generate_v5(uuid_ns_url(), 'group-I')),
   (uuid_generate_v5(uuid_ns_url(), 'team-NOR'), 'Norway', 'NOR', '🇳🇴', uuid_generate_v5(uuid_ns_url(), 'group-I')),
 
   -- Group J

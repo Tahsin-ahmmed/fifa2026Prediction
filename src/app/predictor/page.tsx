@@ -53,14 +53,14 @@ async function getGroups(): Promise<Group[]> {
 function getMockGroups(): Group[] {
   const groupsData = [
     { name: 'A', teams: [{n: 'Mexico', c: 'MEX', f: '🇲🇽'}, {n: 'South Africa', c: 'RSA', f: '🇿🇦'}, {n: 'Korea Republic', c: 'KOR', f: '🇰🇷'}, {n: 'Czechia', c: 'CZE', f: '🇨🇿'}] },
-    { name: 'B', teams: [{n: 'Canada', c: 'CAN', f: '🇨🇦'}, {n: 'Wales', c: 'WAL', f: '🏴󠁧󠁢󠁷󠁬󠁳󠁿'}, {n: 'Qatar', c: 'QAT', f: '🇶🇦'}, {n: 'Switzerland', c: 'SUI', f: '🇨🇭'}] },
+    { name: 'B', teams: [{n: 'Canada', c: 'CAN', f: '🇨🇦'}, {n: 'Bosnia and Herzegovina', c: 'BIH', f: '🇧🇦'}, {n: 'Qatar', c: 'QAT', f: '🇶🇦'}, {n: 'Switzerland', c: 'SUI', f: '🇨🇭'}] },
     { name: 'C', teams: [{n: 'Brazil', c: 'BRA', f: '🇧🇷'}, {n: 'Morocco', c: 'MAR', f: '🇲🇦'}, {n: 'Haiti', c: 'HAI', f: '🇭🇹'}, {n: 'Scotland', c: 'SCO', f: '🏴󠁧󠁢󠁳󠁣󠁴󠁿'}] },
-    { name: 'D', teams: [{n: 'United States', c: 'USA', f: '🇺🇸'}, {n: 'Paraguay', c: 'PAR', f: '🇵🇾'}, {n: 'Australia', c: 'AUS', f: '🇦🇺'}, {n: 'Romania', c: 'ROU', f: '🇷🇴'}] },
+    { name: 'D', teams: [{n: 'United States', c: 'USA', f: '🇺🇸'}, {n: 'Paraguay', c: 'PAR', f: '🇵🇾'}, {n: 'Australia', c: 'AUS', f: '🇦🇺'}, {n: 'Türkiye', c: 'TUR', f: '🇹🇷'}] },
     { name: 'E', teams: [{n: 'Germany', c: 'GER', f: '🇩🇪'}, {n: 'Curaçao', c: 'CUW', f: '🇨🇼'}, {n: "Côte d'Ivoire", c: 'CIV', f: '🇨🇮'}, {n: 'Ecuador', c: 'ECU', f: '🇪🇨'}] },
-    { name: 'F', teams: [{n: 'Netherlands', c: 'NED', f: '🇳🇱'}, {n: 'Japan', c: 'JPN', f: '🇯🇵'}, {n: 'Ukraine', c: 'UKR', f: '🇺🇦'}, {n: 'Tunisia', c: 'TUN', f: '🇹🇳'}] },
+    { name: 'F', teams: [{n: 'Netherlands', c: 'NED', f: '🇳🇱'}, {n: 'Japan', c: 'JPN', f: '🇯🇵'}, {n: 'Sweden', c: 'SWE', f: '🇸🇪'}, {n: 'Tunisia', c: 'TUN', f: '🇹🇳'}] },
     { name: 'G', teams: [{n: 'Belgium', c: 'BEL', f: '🇧🇪'}, {n: 'Egypt', c: 'EGY', f: '🇪🇬'}, {n: 'IR Iran', c: 'IRN', f: '🇮🇷'}, {n: 'New Zealand', c: 'NZL', f: '🇳🇿'}] },
     { name: 'H', teams: [{n: 'Spain', c: 'ESP', f: '🇪🇸'}, {n: 'Cabo Verde', c: 'CPV', f: '🇨🇻'}, {n: 'Saudi Arabia', c: 'KSA', f: '🇸🇦'}, {n: 'Uruguay', c: 'URU', f: '🇺🇾'}] },
-    { name: 'I', teams: [{n: 'France', c: 'FRA', f: '🇫🇷'}, {n: 'Senegal', c: 'SEN', f: '🇸🇳'}, {n: 'Bolivia', c: 'BOL', f: '🇧🇴'}, {n: 'Norway', c: 'NOR', f: '🇳🇴'}] },
+    { name: 'I', teams: [{n: 'France', c: 'FRA', f: '🇫🇷'}, {n: 'Senegal', c: 'SEN', f: '🇸🇳'}, {n: 'Iraq', c: 'IRQ', f: '🇮🇶'}, {n: 'Norway', c: 'NOR', f: '🇳🇴'}] },
     { name: 'J', teams: [{n: 'Argentina', c: 'ARG', f: '🇦🇷'}, {n: 'Algeria', c: 'ALG', f: '🇩🇿'}, {n: 'Austria', c: 'AUT', f: '🇦🇹'}, {n: 'Jordan', c: 'JOR', f: '🇯🇴'}] },
     { name: 'K', teams: [{n: 'Portugal', c: 'POR', f: '🇵🇹'}, {n: 'DR Congo', c: 'COD', f: '🇨🇩'}, {n: 'Uzbekistan', c: 'UZB', f: '🇺🇿'}, {n: 'Colombia', c: 'COL', f: '🇨🇴'}] },
     { name: 'L', teams: [{n: 'England', c: 'ENG', f: '🏴󠁧󠁢󠁥󠁮󠁧󠁿'}, {n: 'Croatia', c: 'CRO', f: '🇭🇷'}, {n: 'Ghana', c: 'GHA', f: '🇬🇭'}, {n: 'Panama', c: 'PAN', f: '🇵🇦'}] },
